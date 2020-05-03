@@ -31,7 +31,7 @@ When starting the program, a login/registration window will appear in which you 
 <hr>
 <br><strong>Server-Side</strong>
 <br>There is currently no GUI for the server side, but you can access the main server script through the shell. Just initiate the script to start it.
-<br>The server package comes with the server script to run locally.
-<br>But also the file 'database.csv' which stores users credentials and SHA-256 hash.
-<br>Added functionality will be included, with such commands to ban users for a set period of time, and set admin priveledges to select users, etc.
+The server package comes with the server script to run locally.
+But also the file 'database.csv' which stores users credentials and SHA-256 hash.
+Added functionality will be included, with such commands to ban users for a set period of time, and set admin priveledges to select users, etc.
 <br> GUI will be added eventually but will be very rudimentary, thanks.
