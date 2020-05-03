@@ -1,3 +1,7 @@
+# Currently working on creating persistent friend list and chat path logs. [03/05/2020]
+
+
+
 # to be continued at a later date, add friend functionality needs to be fixed
 # check to do text file
 import datetime
@@ -25,7 +29,28 @@ if not os.path.exists(chat_path):
 
 # this is for persistent storing of friends list in local files
 pickle_friends_file = 'friends.pickle'
-pickle_friends_path = os.path.join(chat_path, 'pickle_friends_file')
+pickle_friends_path = os.path.join(chat_path, pickle_friends_file)
+try:
+    try:
+        with open(pickle_friends_path, 'rb') as f:
+            friends_added = pickle.load(f)
+    except EOFError as e:
+        friends_added = []
+except FileNotFoundError as e:
+    friends_added = []
+
+pickle_object_file = 'friends_object.pickle'
+pickle_object_path = os.path.join(chat_path, pickle_object_file)
+try:
+    try:
+        with open(pickle_object_path, 'rb') as f:
+            friend_object = pickle.load(f)
+            print(f'Friend Object Pickle List {friend_object}')  # [<__main__.addFriend object at 0x0666E810>]
+    except EOFError as e:
+        friend_object = []
+except FileNotFoundError as e:
+    friend_object = []
+
 mydata_path = os.path.join(chat_path, 'mydata.fs')
 storage = ZODB.FileStorage.FileStorage(mydata_path)
 db = ZODB.DB(storage)
@@ -35,13 +60,13 @@ db_root['conn'] = 999
 db_root['live'] = []
 transaction.get().commit()
 unique_ip = []
-friends_added = []
+
 
 class LiveObject:
     def __init__(self, liveconnections, ip2username):
         self.liveconnections = liveconnections  # list --> tuple
         self.ip2username = ip2username  # dictionary
-    def parseinfo(self, live_contacts_content, username):
+    def parseinfo(self, live_contacts_content, username, my_contacts_canvas):
         isOnline = False
         no_conn = len(self.liveconnections)
         db_root = connection.root()
@@ -79,12 +104,18 @@ class LiveObject:
                     # print(f'List: {list}')
                     for x in range(len(list)):
                         if len(list[x]) != 0:
-                            # print(f'IP: {list[x]}')
+                            print(f'IP: {list[x]}')
+                            print(f'Unqiue IPs:')
                             if str(list[x]) not in unique_ip:
                                 unique_ip.append(str(list[x]))  # these are the ip's that are in connections
                                 isOnline = True
-                                liveuserbox_creator(ip, name, isOnline, live_contacts_content, isUser, )  # this creates the live listbox on app...
+                                liveuserbox_creator(ip, name, isOnline, live_contacts_content, isUser, my_contacts_canvas)  # this creates the live listbox on app...
                                 # print(f'Unqiue IP {str(unique_ip)}')
+                            elif str(list[x]) in unique_ip:
+                                for x in range(len(self.liveconnections)):
+                                    ip, conn = self.liveconnections[x]
+                                    if ip == str(list[x]):
+                                        print(f'Conn of this IP is: {conn}')
             except Exception as e:
                 print(f'[Error HERE]: {e}')
                 db_root['live'] = unique_ip
@@ -99,13 +130,15 @@ class LiveObject:
 def onclose(username):
     print('Closing Program')
     root.destroy()
+    with open(pickle_friends_path, 'a') as f:
+        pickle.dump(friends_added, f)
     print('Closing Connection')
     send(DISCONNECT_MESSAGE, username)
     client.close()
     exit(0)
 
 
-def ping(live_contacts_content, username):
+def ping(live_contacts_content, username, my_contacts_canvas):
     while True:
         try:
             msg = 'PING LIVE'
@@ -122,7 +155,7 @@ def ping(live_contacts_content, username):
             # print(type(live_clients))
             print(f'Live connections: {live_clients.liveconnections}')
             print(f' IP2USERNAME: {live_clients.ip2username}')
-            live_clients.parseinfo(live_contacts_content, username)
+            live_clients.parseinfo(live_contacts_content, username, my_contacts_canvas)
             time.sleep(10)
         except Exception as e:
             print('Ohh you have disconnected from server, restart app and login to connect again.')
@@ -340,7 +373,7 @@ def maingui(username):
 
     # Threads that need to be running are here.
     # message_canvas_thread = threading.Thread(target=message_listener, args=(message_canvas, recieved_message)).start()
-    thread = threading.Thread(target=ping, args=(live_contacts_canvas, username)).start()
+    thread = threading.Thread(target=ping, args=(live_contacts_canvas, username, my_contacts_canvas)).start()
     print('Ping has started.')
 
     # Essential Widgets
@@ -438,37 +471,36 @@ def maingui(username):
     contacts.pack()
     live_contacts_canvas.pack(expand=True, fill='both')
 
-def add_friend(name, ip, livebox, add_friend_canvas, add_friend_button, my_contacts_canvas):
-    # print(f'Button has been clicked {name}, {ip}')
-    friend_path = os.path.join(chat_path, name['text'])
-    if not os.path.exists(friend_path):
-        os.makedirs(friend_path)
-        chat_log_txt_path = os.path.join(friend_path, name['text']+'_chat.txt')
-        messagetime = datetime.datetime.now().strftime("%H:%M")
-        with open(chat_log_txt_path, 'w+') as file_creator:
-            file_creator.write(f'Chat has been initaited @ {messagetime}')
-        # print('Path has been made...')
-        string = f"{name['text']}:{str(ip['text'])}"
-        list = db_root['friends']
-        username_checker = []
-        for x in range(len(list)):
-            dbusername = list[x].split(':')[0]
-            tag = list[x]
-            if dbusername in username_checker:
-                pass
-            if dbusername == name['text']:
-                pass
-            else:
-                username_checker.append(tag)
-        username_checker.append(string)
-        db_root['friends'] = username_checker
-        print(f'Database: {db_root}')
-        transaction.get().commit()
-        connection.close()
-    add_friend_button.destroy()
-    text = tk.Label(add_friend_canvas, text='Added', font=('helvetica', 9, 'bold'))
-    text.pack()
-    my_contacts_listbox_creator(my_contacts_canvas)
+
+class addFriend:
+    def __init__(self, name, ip, livebox, add_friend_canvas, add_friend_button, my_contacts_canvas):
+        self.ip = ip['text']
+        self.name = name['text']
+        self.txt_path = ''
+        friend_path = os.path.join(chat_path, self.name)
+        if not os.path.exists(friend_path):
+            os.makedirs(friend_path)
+            chat_log_txt_path = os.path.join(friend_path, name['text'] + '_chat.txt')
+            self.txt_path = chat_log_txt_path
+            messagetime = datetime.datetime.now().strftime("%H:%M")
+            with open(chat_log_txt_path, 'w+') as file_creator:
+                file_creator.write(f'Chat has been initaited @ {messagetime}')
+        add_friend_button.destroy()
+        text = tk.Label(add_friend_canvas, text='Added', font=('helvetica', 9, 'bold'))
+        text.pack()
+        my_contacts_listbox_creator(my_contacts_canvas)
+
+def object_pickler(object, name):
+    friend_object.append(object)
+    with open(pickle_object_path, 'a') as f:
+        pickle.dump(friend_object, f)
+    print(f' Friend Object List: {friend_object}')
+    friends_added.append(name['text'])
+    with open(pickle_friends_path, 'a') as f:
+        pickle.dump(friends_added, f)
+
+def creator(name, ip, livebox, add_friend_canvas, add_friend_button, my_contacts_canvas):
+    object_pickler(addFriend(name, ip, livebox, add_friend_canvas, add_friend_button, my_contacts_canvas), name)
 
 
 def liveuserbox_creator(ip, name, isOnline, live_contacts_content, isUser, my_contacts_canvas):  # listbox creator function, need to find out how i can import live_contacts variable
@@ -476,7 +508,7 @@ def liveuserbox_creator(ip, name, isOnline, live_contacts_content, isUser, my_co
     # index checking to make sure we are not displaying same status again
     livebox_instances = len(live_contacts_content.winfo_children())-1  # how many user status boxes currently showing in panel...
     livebox = tk.Frame(live_contacts_content)
-    if isOnline:
+    if isOnline:  # Will always be the case, useless condition.
         img = Image.open('Resources/online.png')
     else:
         img = Image.open('Resources/offline.png')
@@ -493,14 +525,14 @@ def liveuserbox_creator(ip, name, isOnline, live_contacts_content, isUser, my_co
     label.pack()
     username = name['text']
     add_friend_canvas = tk.Canvas(livebox, width=20, height=20, background='white')
-    if not isUser and username not in db_root['friends']:
-        add_friend_button = tk.Button(add_friend_canvas, text='Add', relief='flat', highlightthickness=0, borderwidth=1)
-        add_friend_button.config(bg='green', fg='white', font=('helvetica', 9, 'bold'), command=lambda: add_friend(name, ip, livebox, add_friend_canvas, add_friend_button, my_contacts_canvas))
-        add_friend_button.pack()
-        add_friend_canvas.grid(row=0, column=3)
-    if username in db_root['friends']:
+    if username in friends_added:
         text = tk.Label(add_friend_canvas, text='Added', font=('helvetica', 9, 'bold'))
         text.pack()
+    if not isUser and username not in friends_added:  # and username not in db_root['friends']
+        add_friend_button = tk.Button(add_friend_canvas, text='Add', relief='flat', highlightthickness=0, borderwidth=1)
+        add_friend_button.config(bg='green', fg='white', font=('helvetica', 9, 'bold'), command=lambda: creator(name, ip, livebox, add_friend_canvas, add_friend_button, my_contacts_canvas))
+        add_friend_button.pack()
+        add_friend_canvas.grid(row=0, column=3)
     livebox.pack(expand=True, fill='both')
     return live_contacts_content, livebox
 
@@ -525,7 +557,6 @@ def message_listener(message_canvas, recieved_message):
             # message = recv_dict['message']
             # message_handler(message_received, message_canvas, message, time)
 
-
 def message_handler(message_recieved, message_canvas, message, messagetime):
     messagebox = tk.Frame(message_canvas, width=round(window_width / 100 * 70))
     message = tk.Label(messagebox, text=message_recieved)
@@ -537,21 +568,23 @@ def message_handler(message_recieved, message_canvas, message, messagetime):
     messagebox.pack(side='top', anchor=tk.NW, expand=1, pady=5, fill=tk.X)
 
 
-def my_contacts_listbox_creator(my_contacts_canvas):
-    list = db_root['friends']
-    for x in range(len(list)):
-        dbusername = list[x].split(':')[0]
-        dbip = list[x].split(':')[1]
+def my_contacts_listbox_creator(my_contacts_canvas):  # Comment for debugging.
+    print(friends_added)
+    print(friend_object)
+    for x in range(len(friend_object)):
+        name = friend_object[x].name
+        ip = friend_object[x].ip
+        object_txt_path = friend_object[x].txt+path
         contactsbox = tk.Frame(my_contacts_canvas)
-        if dbusername not in friends_added:
-            ip = tk.Label(contactsbox, text=dbip)
+        if name in friends_added:
+            ip = tk.Label(contactsbox, text=ip)
             ip.grid(row=0, column=0)
-            name = tk.Label(contactsbox, text=dbusername.title())
+            name = tk.Label(contactsbox, text=name.title())
             name.grid(row=0, column=1)
             logocanvas = tk.Canvas(contactsbox, width=round(window_width / 100 * 5), height=round(window_height / 100 * 5))
             logocanvas.grid(row=0, column=2, padx=(5, 5))
             contactsbox.pack(expand=True, fill='both')
-            friends_added.append(dbusername)
+
             # Want this function to be called at the start with known friends and then again when a friend is added...
 
 # need to find out, how scrollbars and hidden widgets work
