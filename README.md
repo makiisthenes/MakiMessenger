@@ -11,7 +11,7 @@ When starting the program, a login/registration window will appear in which you 
   <img src='https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/Pictures/program_preview.PNG' width=400>
 </p>
 <h4>Main Usage</h4>
-Once you registered and logged in, there are 3 main sections to look out for, these include:
+<i>Once you registered and logged in, there are 3 main sections to look out for, these include:</i>
 <br><strong>Live User Window</strong>
 <br>This is located in the top left of the window and will show you the people that are currently on the app and connected to the server, these will be users on the same network as you. They all have an option to be added to your friends list, which the button "Add"
 <br><strong>Contacts List</strong>
