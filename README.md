@@ -12,3 +12,7 @@ When starting the program, a login/registration window will appear in which you 
 </p>
 <h4>Main Usage</h4>
 
+<p align="center">
+  <img src='https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/Pictures/day4_finalv2.PNG' width=400>
+</p>
+
