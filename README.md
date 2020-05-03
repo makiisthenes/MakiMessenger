@@ -17,13 +17,13 @@ When starting the program, a login/registration window will appear in which you 
 <h4>Main Usage</h4>
 <i>Once you registered and logged in, there are 3 main sections to look out for, these include:</i>
 <hr>
-<br><strong><h4>Live User Window</h4></strong>
+<br><strong>Live User Window</strong>
 <br>This is located in the top left of the window and will show you the people that are currently on the app and connected to the server, these will be users on the same network as you. They all have an option to be added to your friends list, with the button "Add" on the contacts name.
 <hr>
-<br><strong><h4>Contacts List</strong></h4>
+<br><strong>Contacts List</strong>
 <br>This is located in the left bottom of the window and will include users that you have added to your contacts list, this will be tied to your account and will be persistantly stored on the server and client. You can initiate a chat with any user in your contacts list by just clicking on thier name on this window. Note that there isnt any friend requests and anyone can communicate with anyone, however if you do not want to communicate with this user you have the option to block.
 <hr>
-<br><strong><h4>Message Content Box</h4></strong>
+<br><strong>Message Content Box</strong>
 <br>By defualt this will relay all comments posted in an type of 'groupchat' containing all known users, this chat will not be saved locally but will be saved on the server-side. You have the option to keep these logs for a min of a day. If you click on a user that you have added as a friend a chat will be initaited between you 2 clients and saved locally permanently and server-side temporarily. There is currently no option to delete comments from chats so beware. Text and emojis are currently only supported. Images and GIFS will eventually have added functionality.
 <p align="center">
   <img src='https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/Pictures/day4_finalv2.PNG' width=400>
