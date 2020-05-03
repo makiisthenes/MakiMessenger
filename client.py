@@ -1,5 +1,7 @@
 # Currently working on creating persistent friend list and chat path logs. [02/05/2020]
 # Currently working on merging the object, friends lists together for GUI. [03/05/2020]
+# Make the listbox fit into the contacts window box. [03/05/2020]
+
 
 import datetime, transaction, os, pickle, socket, threading, time, ZODB.FileStorage, hashlib
 import tkinter as tk
@@ -263,6 +265,7 @@ def signinreq(event=None):
     global error
     username = login_user_input.get().strip()
     password = login_pass_input.get().strip()
+    password_hash = hashlib.sha256(bytes(password)).hexdigest()  # SHA-256 Hash
     if len(username) and len(password) != 0:
         send(f'SIGNIN REQ {username} {password}', username)
 
@@ -288,6 +291,7 @@ register_btn = tk.Button(root)
 def registerreq(event=None):
     username = register_user_input.get().strip()
     password = register_pass_input.get().strip()
+    password_hash = hashlib.sha256(bytes(password)).hexdigest()  # SHA-256 Hash
     if len(username) < 10:
         if len(username) or len(password) != 0:
             print(f'CREATE USER {username} {password}')
@@ -415,6 +419,9 @@ def maingui(username):
     send_input.pack(expand=True, fill='x')
     # send_input.grid(row=0, column=0)
     # send_input.grid_configure(sticky='nsew')
+
+    my_contacts_listbox_creator(my_contacts_canvas)
+    # The above code will add all known contacts onto the contacts window in which it can be accessed.
 
     def targetsend():
         message = send_input.get()
@@ -559,7 +566,6 @@ def merger(friends_added, friend_object, my_contacts_canvas)  # [03/05/2020] my_
             # This needs to be double checked to make sure it is right... function listbox_creator needs to be reviewed.
 
 
-
 # This needs to search added friends list automatically and look at objects list for cross reference.
 def my_contacts_listbox_creator(my_contacts_canvas):  # Comment for debugging.
     print(friends_added)
@@ -567,7 +573,7 @@ def my_contacts_listbox_creator(my_contacts_canvas):  # Comment for debugging.
     for x in range(len(friend_object)):
         name = friend_object[x].name
         ip = friend_object[x].ip
-        object_txt_path = friend_object[x].txt+path
+        object_txt_path = friend_object[x].txt_path
         contactsbox = tk.Frame(my_contacts_canvas)
         if name in friends_added:
             ip = tk.Label(contactsbox, text=ip)
