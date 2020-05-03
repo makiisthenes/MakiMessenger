@@ -30,3 +30,4 @@ When starting the program, a login/registration window will appear in which you 
 </p>
 <hr>
 <br><strong>Server-Side</strong>
+There is currently no GUI for the server side, but you can access the main server script through the shell. Just initiate the script to start it.
