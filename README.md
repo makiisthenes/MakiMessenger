@@ -42,7 +42,7 @@ Added functionality will be included, with such commands to ban users for a set 
 be set up and you can communicate with people on the same network. This will not gurantee you a secure messaging app.<br>
 <hr>
 <br><strong>Security Features</strong>
-<br>I aim to make this program as secure as possible, but you may wish to increase security by making the network password, a long, unguessable password, you can obtain one from the website <a href='https://www.rempe.us/diceware/#eff'> here.</a>
+<br>I aim to make this program as secure as possible, but you may wish to increase security by making the network password, a long, unguessable passphrase, you can obtain one from the website <a href='https://www.rempe.us/diceware/#eff'> here.</a>
 <br><i>Security Features Include:</i>
 <ul>
   <li>Passwords Stored in SHA-256</li>
