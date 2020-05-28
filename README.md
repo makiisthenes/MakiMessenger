@@ -43,6 +43,8 @@ be set up and you can communicate with people on the same network. This will not
 <hr>
 <br><strong>Security Features</strong>
 <br>I aim to make this program as secure as possible, but you may wish to increase security by making the network password, a long, unguessable password, you can obtain one from the website <a href='https://www.rempe.us/diceware/#eff'> here.</a>
-<br><ul>Security Features Include:
+<br>Security Features Include:
+<ul>
   <li>Passwords Stored in SHA-256</li>
   <li>Asymmetric Encryption [development]</li>
+</ul>
