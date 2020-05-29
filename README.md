@@ -48,7 +48,7 @@ be set up and you can communicate with people on the same network. This will not
 <ul>
   <li>Passwords Stored in SHA-256</li>
   <li>Asymmetric Encryption [development]</li>
-  <li>2 Factor Authentication</li>
+  <li>2-Factor Authentication</li>
 </ul>
 <hr>
 <br><strong>Acknowledgements</strong>
