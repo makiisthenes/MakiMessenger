@@ -46,10 +46,10 @@ be set up and you can communicate with people on the same network. This will not
 <br>Im reviewing the module Cryptography to improve security of this app.
 <br><i>Security Features Include:</i>
 <ul>
-  <li>Passwords Stored in SHA-256</li>
+  <li>Passwords Stored in SHA-256 [DONE]</li>
   <li>Asymmetric Encryption [development]</li>
-  <li>2-Factor Authentication</li>
-  <li>Encrypted Chat Files</li>
+  <li>2-Factor Authentication [DONE]</li>
+  <li>Encrypted Chat Files [development]</li>
 </ul>
 <hr>
 <br><strong>Acknowledgements</strong>
