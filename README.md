@@ -64,3 +64,4 @@ be set up and you can communicate with people on the same network. This will not
 <br>-->https://nitratine.net/blog/post/asymmetric-encryption-and-decryption-in-python/
 <br>--> https://cryptography.io/en/latest/hazmat/primitives/
 <br>--> https://docs.python.org/3/library/tkinter.html
+<br>--> https://hackernoon.com/10-common-security-gotchas-in-python-and-how-to-avoid-them-e19fbe265e03
