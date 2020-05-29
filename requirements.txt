@@ -14,3 +14,6 @@ ZConfig==3.5.0
 ZODB==5.5.1
 zodbpickle==2.0.0
 zope.interface==5.1.0
+requests~=2.23.0
+pythonping~=1.0.10
+cryptography~=2.9.2
