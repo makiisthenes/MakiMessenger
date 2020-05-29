@@ -60,3 +60,5 @@ be set up and you can communicate with people on the same network. This will not
 <hr>
 <br><strong>Acknowledgements</strong>
 <br>desklamp2 - Diceware Link
+# Site: https://nitratine.net/blog/post/asymmetric-encryption-and-decryption-in-python/
+# Site: https://cryptography.io/en/latest/hazmat/primitives/
