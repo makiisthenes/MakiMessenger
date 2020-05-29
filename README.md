@@ -59,4 +59,4 @@ be set up and you can communicate with people on the same network. This will not
 <br>But also have the option for it to be stored on a centralised server (host).
 <hr>
 <br><strong>Acknowledgements</strong>
-desklamp2 - Diceware Link
+<br>desklamp2 - Diceware Link
