@@ -43,10 +43,12 @@ be set up and you can communicate with people on the same network. This will not
 <hr>
 <br><strong>Security Features</strong>
 <br>I aim to make this program as secure as possible, but you may wish to increase security by making the network password, a long, unguessable passphrase, you can obtain one from the website <a href='https://www.rempe.us/diceware/#eff'> here.</a>
+<br>Im reviewing the module Cryptography to improve security of this app.
 <br><i>Security Features Include:</i>
 <ul>
   <li>Passwords Stored in SHA-256</li>
   <li>Asymmetric Encryption [development]</li>
+  <li>2 Factor Authentication</li>
 </ul>
 <hr>
 <br><strong>Acknowledgements</strong>
