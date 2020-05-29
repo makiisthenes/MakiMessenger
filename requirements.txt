@@ -17,3 +17,4 @@ zope.interface==5.1.0
 requests~=2.23.0
 pythonping~=1.0.10
 cryptography~=2.9.2
+PyAutoGUI~=0.9.50
