@@ -1,11 +1,10 @@
-import datetime, transaction, os, pickle, socket, hashlib, requests, socket, json
+import datetime, transaction, os, pickle, socket, hashlib, requests, socket, json, random
 import tkinter as tk
 from PIL import ImageTk, Image
 from connect import server_connect, get_private_ip
 from tk_starter import tk_init, getwindow
 from ping import check_status
 from threading import Thread
-
 
 if __name__ == '__main__':
 	# Initation of Program
@@ -18,12 +17,12 @@ if __name__ == '__main__':
 		def __init__(self, root):
 			self.root = root
 			self.ip = get_private_ip()
-			self.registered_user = True  # Crosscheck with Server for IP registered.
+			self.registered_user = False  # Crosscheck with Server for IP registered.
 			if self.registered_user:
 				self.login_message = 'Back, '
 			else:
 				self.login_message = 'Newbie, '
-			self.password_cover = ['♦', '♣', '♠', '♥']
+			self.password_cover = random.choice(['♦', '♣', '♠', '♥'])
 
 		def login_page(self):
 			self.main_canvas = tk.Canvas(self.root, width=750, height=500, highlightthickness=5, highlightbackground="black")
@@ -43,10 +42,18 @@ if __name__ == '__main__':
 				self.passphrase.place(x=int(window_width / 100 * 11), y=int(window_height / 100 * 25), width=int(window_width / 4))
 				self.login_btn = tk.Button(self.main_canvas)
 				self.login_btn.bind('<Return>', None)
-				self.login_btn.config(text='Sign In', bg='#377Ef0', fg='#F0F0F0', font=('sans', 9, 'bold'), relief = 'groove', command=None)
+				self.login_btn.config(text='Sign In', bg='#377Ef0', fg='#F0F0F0', font=('sans', 9, 'bold'), relief='groove', command=None)
 				self.login_btn.place(x=int(window_width / 100 * 11), y=int(window_height / 100 * 29.5))
 			else:
-				pass
+				self.register_title = tk.Label(self.main_canvas, text='Make an Account on this Network', font=('helvetica', 10, 'bold'))
+				self.register_title.place(x=int(window_width / 100 * 10), y=int(window_height / 100 * 20))
+				self.passphrase = tk.Entry(self.main_canvas, relief='solid', show=self.password_cover)
+				self.passphrase.insert(0, 'Passphrase')
+				self.passphrase.place(x=int(window_width / 100 * 11), y=int(window_height / 100 * 25), width=int(window_width / 4))
+				self.register_btn = tk.Button(self.main_canvas)
+				self.register_btn.bind('<Return>', None)
+				self.register_btn.config(text='Register', bg='#377Ef0', fg='#F0F0F0', font=('sans', 9, 'bold'), relief='groove', command=None)
+				self.register_btn.place(x=int(window_width / 100 * 11), y=int(window_height / 100 * 29.5))
 			self.root.mainloop()
 
 
