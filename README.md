@@ -1,4 +1,4 @@
-<h1>MakiMessenger</h1><br>
+<h1>MakiMessenger [REWORK]</h1><br>
 An messenger that allows users to communicate to each other in a local network setting. [FIREWALL PROBLEMS]
 <hr>
 <span style='color:red'><strong>[There is currently limited functionality and works partially, this is currently in development during COVID19 and will be completed soon, thanks.]<br>
