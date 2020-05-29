@@ -38,7 +38,7 @@ Added functionality will be included, with such commands to ban users for a set 
 <br> GUI will be added eventually but will be very rudimentary, thanks.
 <hr>
 <br><strong>Server-Side (lite) v1</strong>
-<br>This bersion of the server will run natively on a electronic module such as the ESP8266, where a mini network can
+<br>This version of the server will run natively on a electronic module such as the ESP8266, where a mini network can
 be set up and you can communicate with people on the same network. This will not gurantee you a secure messaging app.<br>
 <hr>
 <br><strong>Security Features</strong>
