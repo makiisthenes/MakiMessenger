@@ -64,7 +64,5 @@ f = open('test.encrypted', 'wb')
 f.write(encrypted)
 f.close()
 
-# Site: https://nitratine.net/blog/post/asymmetric-encryption-and-decryption-in-python/
-
 
 # python -m pip install --upgrade pip --force-reinstall

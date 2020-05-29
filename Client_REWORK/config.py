@@ -2,7 +2,7 @@
 import os
 
 # NETWORK CONFIG VARIABLES
-SERVER = "169.254.54.35"  # This is the Server
+SERVER = "169.254.54.35"  # This is the Server IP, please change accordingly.
 HEADER = 64
 PORT = 5050
 
