@@ -51,6 +51,8 @@ be set up and you can communicate with people on the same network. This will not
   <li>2-Factor Authentication [DONE]</li>
   <li>Encrypted Chat Files [development]</li>
 </ul>
+<br>Futhermore I do intent to add a layer of complexity and security with the use of common sense in a sort of point system.
+<br>This includes making sure the user is in an known location, the device is recognised by devices MAC address, the screen size matches.
 <hr>
 <br><strong>Features</strong>
 <br>I want to add the feature chats can be saved in Google Drive Backups (optional).
