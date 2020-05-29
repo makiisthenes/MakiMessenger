@@ -52,4 +52,8 @@ be set up and you can communicate with people on the same network. This will not
   <li>Encrypted Chat Files [development]</li>
 </ul>
 <hr>
+<br><strong>Features</strong>
+<br>I want to add the feature chats can be saved in Google Drive Backups (optional).
+<br>But also have the option for it to be stored on a centralised server (host).
+<hr>
 <br><strong>Acknowledgements</strong>
