@@ -50,7 +50,7 @@ be set up and you can communicate with people on the same network. This will not
   <li>Asymmetric Encryption [development]</li>
   <li>2-Factor Authentication [DONE]</li>
   <li>Encrypted Chat Files [development]</li>
-  <li>Input Injection</li>
+  <li>Input Injection [continous]</li>
 </ul>
 <br>Futhermore I do intent to add a layer of complexity and security with the use of common sense in a sort of point system.
 <br>This includes making sure the user is in an known location, the device is recognised by device's MAC address, the screen size match and timezones.
