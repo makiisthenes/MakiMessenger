@@ -5,6 +5,7 @@ from connect import server_connect, get_private_ip
 from tk_starter import tk_init, getwindow
 from ping import check_status
 from threading import Thread
+from config import SERVER, PORT, HEADER_LENGTH
 
 if __name__ == '__main__':
 	# Initation of Program
@@ -17,13 +18,12 @@ if __name__ == '__main__':
 		def __init__(self, root):
 			self.root = root
 			self.ip = get_private_ip()
-			self.registered_user = False  # Crosscheck with Server for IP registered.
+			self.registered_user = True  # Crosscheck with Server for IP registered.
 			if self.registered_user:
 				self.login_message = 'Back, '
 			else:
 				self.login_message = 'Newbie, '
 			self.password_cover = random.choice(['♦', '♣', '♠', '♥'])
-
 		def login_page(self):
 			self.main_canvas = tk.Canvas(self.root, width=750, height=500, highlightthickness=5, highlightbackground="black")
 			self.main_canvas.pack()
@@ -55,12 +55,13 @@ if __name__ == '__main__':
 				self.register_btn.config(text='Register', bg='#377Ef0', fg='#F0F0F0', font=('sans', 9, 'bold'), relief='groove', command=None)
 				self.register_btn.place(x=int(window_width / 100 * 11), y=int(window_height / 100 * 29.5))
 			self.root.mainloop()
-
+			# self.root.quit() break mainloop
 
 		def f2a_page(self):
 			pass
 
 		def clear_page(self):
+
 			self.main_canvas.delete('all')  # Everything should be build on the main_canvas.
 			self.main_canvas.destroy()
 			self.title.destroy()
@@ -71,5 +72,20 @@ if __name__ == '__main__':
 		def settings_page(self):
 			pass
 
-	MakiSession(root=root).login_page()
-	# MakiSession.clear_page()
+	def connection_terminal(SERVER, PORT):
+		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		s.connect((SERVER, PORT))
+		while True:
+			msg = input("Type message to send to server:: ")
+			msg = f'{len(msg):<{HEADER_LENGTH}}' + msg
+			s.send(msg.encode('utf-8'))
+
+
+
+
+	Thread(target=connection_terminal, args=(SERVER, PORT)).start()
+	maki = MakiSession(root=root)
+	maki.login_page()
+	# print('Window has been closed')
+
+

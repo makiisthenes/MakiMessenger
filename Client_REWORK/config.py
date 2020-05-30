@@ -5,6 +5,7 @@ import os
 SERVER = "169.254.54.35"  # This is the Server IP, please change accordingly.
 HEADER = 64
 PORT = 5050
+HEADER_LENGTH = 10
 
 # TK CONFIG VARIABLES
 window_height = 500
