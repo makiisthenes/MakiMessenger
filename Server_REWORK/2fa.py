@@ -17,6 +17,8 @@ def verify_user(user):
     send_f2a(user, f2a_pin)
     print('Since this IP has already been registered and logged on, collect an F2A pin for the admin.')
     x = 3
+
+    # On Server-Side relayed to Front-End
     while notVerified:
         user_input = input('Enter 2FA Pin to unlock this account:: ').replace('/', '').encode()  # Encoding into bytes form.
         try:
@@ -31,5 +33,3 @@ def verify_user(user):
             else:
                 print(f'Invalid PIN [{x} Attempts left]')
                 x -= 1
-
-verify_user("michaelperes1@gmail.com")
