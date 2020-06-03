@@ -9,3 +9,5 @@ def send_general_batch(msg, email_list):
 
 def send_password_reset():
     pass
+
+# To Be Completed at later date.
