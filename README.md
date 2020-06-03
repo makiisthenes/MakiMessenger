@@ -66,3 +66,6 @@ be set up and you can communicate with people on the same network. This will not
 <br>--> https://docs.python.org/3/library/tkinter.html
 <br>--> https://hackernoon.com/10-common-security-gotchas-in-python-and-how-to-avoid-them-e19fbe265e03
 <br>--> https://effbot.org/tkinterbook/canvas.html
+
+<hr>
+<br><strong>Rework</strong>
