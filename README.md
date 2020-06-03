@@ -48,6 +48,7 @@ be set up and you can communicate with people on the same network. This will not
 <ul>
   <li>Passwords Stored in SHA-256 [DONE]</li>
   <li>Asymmetric Encryption [development]</li>
+  <li>Email Validation [continous]</li>
   <li>2-Factor Authentication [DONE]</li>
   <li>Encrypted Chat Files [development]</li>
   <li>Input Injection [continous]</li>
