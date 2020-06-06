@@ -75,12 +75,12 @@ be set up and you can communicate with people on the same network. This will not
   <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/Working/clientv2.PNG", width=400>
 </p>
 <p align="center">
+  <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/Pictures/server_config_window.PNG", width=400>
+</p>
+<p align="center">
   <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/Working/plan.png", width=700>
 </p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/Pictures/maki_slide1.png", width=700>
-</p>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/Pictures/server_config_window.PNG", width=400>
 </p>
 
