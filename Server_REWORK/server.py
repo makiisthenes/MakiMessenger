@@ -40,8 +40,8 @@ def send_msg(conn, addr, msg):
 # SOCK_STREAM - tcp connection
 server_port = 5050
 HEADER_LENGTH = 10
-server_ip = socket.gethostbyname(socket.gethostname())
-# server_ip = '169.254.54.35'
+# server_ip = socket.gethostbyname(socket.gethostname())
+server_ip = '169.254.54.35'
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 server_address = (server_ip, server_port)
