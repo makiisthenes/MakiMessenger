@@ -83,4 +83,6 @@ be set up and you can communicate with people on the same network. This will not
 <p align="center">
   <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/Pictures/maki_slide1.png", width=700>
 </p>
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/Pictures/maki_slide1.png", width=700>
+</p>
