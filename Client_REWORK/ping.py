@@ -6,6 +6,7 @@ from time import sleep
 def ping_server(SERVER):
 	pinging = ping(SERVER)
 	if pinging.success():
+		# print("Ping Successful  -Debug")
 		return True
 	else:
 		return False

@@ -1,6 +1,9 @@
 from config import PATH_TO_MAKI_ICON, window_width, window_height
 import tkinter as tk
 
+
+
+
 def tk_init():
 	root = tk.Tk()
 	root.title('Maki Messenger')

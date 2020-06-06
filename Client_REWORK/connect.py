@@ -3,12 +3,13 @@ from config import PORT
 
 def server_connect(SERVER, PORT=PORT):
 	ADDR = (SERVER, PORT)
+	print(ADDR)
 	client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	try:
 		client.connect(ADDR)
 	except ConnectionRefusedError:
 		print(
-			"Sorry but the Server IP specified is not currently accepting connections, are you sure this is the conrrect IP?")
+			"Sorry but the Server IP specified is not currently accepting connections, are you sure this is the correct IP?")
 		exit(-1)
 
 def get_private_ip():
@@ -21,3 +22,7 @@ def get_public_ip():
 	except Exception:
 		public_ip = "0.0.0.0"
 	return public_ip
+
+
+def server_disconnect(SERVER, PORT=PORT):
+	pass

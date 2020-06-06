@@ -14,5 +14,6 @@ window_width = 750
 # PROGRAM FIXED VARIABLES
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"  # dont change
-error = None  #defualt
+error = None  # defualt
 PATH_TO_MAKI_ICON = os.path.join(os.path.join(os.getcwd(), 'Resources'), 'makimessenger.ico')
+
