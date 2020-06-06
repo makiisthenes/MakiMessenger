@@ -1,5 +1,6 @@
 import socket, requests, json
-from config import SERVER, PORT
+from config import PORT
+from client import SERVER
 
 def server_connect(SERVER=SERVER, PORT=PORT):
 	ADDR = (SERVER, PORT)

@@ -1,4 +1,4 @@
-from config import SERVER
+from client import SERVER
 import easygui
 from pythonping import ping
 from time import sleep
