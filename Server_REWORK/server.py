@@ -1,10 +1,12 @@
 import socket, sys, threading, pickle, select
 from pythonping import ping
+from encryption import generate_key_pair
 
 
 def handle_client_recv(conn, addr):
     print(f'[CONNECTION] Connected at {addr}.')
-    conn.send("Welcome to the server.".encode('utf-8'))
+    generate_key_pair()
+    conn.send("Welcome to the Maki Messenger Server. [Unencrypted]".encode('utf-8'))
     full_msg = ''
     new_msg = True
     Connected = True
@@ -30,6 +32,7 @@ def handle_client_recv(conn, addr):
             elif full_msg[HEADER_LENGTH:] != '/disconnect':
                 print(full_msg[HEADER_LENGTH:])
 
+
 def send_msg(conn, addr, msg):
     pass
 
@@ -46,6 +49,7 @@ print(f'Starting Server on [{server_ip}]:[{server_port}]')
 server.bind(server_address)
 server.listen(5)
 print("[STARTED] Server has Started...")
+
 
 
 while True:

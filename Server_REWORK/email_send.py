@@ -5,7 +5,7 @@ import smtplib, datetime
 YAHOO_EMAIL = "makimessenger@yahoo.com"
 GMAIL_EMAIL = "markiring1988@gmail.com"
 YAHOO_SMTP = "smtp.mail.yahoo.com"
-PASSWORD = "Password"
+PASSWORD = "chief.french.activity"
 YANDEX_SMTP = "smtp.yandex.com"
 GMAIL_SMTP = "smtp.gmail.com"
 
