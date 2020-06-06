@@ -7,7 +7,7 @@ currently being supported with security updates.
 
 | Version | Windows Supported          |
 | ------- | ------------------ |
-| a-V1.0.0  | :green_check_mark: |
+| a-V1.0.0  | :white_check_mark: |
 
 
 ## Reporting a Vulnerability
