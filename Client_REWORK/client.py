@@ -168,6 +168,15 @@ if __name__ == '__main__':
                 s.close()
                 break
 
+    # File Maker
+    # this is the file directories needed for this program to run...
+    path = os.path.join(os.getcwd(), 'ProgramData')
+    if not os.path.exists(path):
+        os.makedirs(path)
+    chat_path = os.path.join(path, 'Chats')
+    if not os.path.exists(chat_path):
+        os.makedirs(chat_path)
+
 
     # Client starts here -->
     SERVER = server_ip_reader()
