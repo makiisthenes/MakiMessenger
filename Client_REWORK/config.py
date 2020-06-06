@@ -1,6 +1,5 @@
 # This is the configuration file for Client, this will be moved to settings.
 import os
-from client import SERVER
 
 # NETWORK CONFIG VARIABLES
 

@@ -1,9 +1,9 @@
-from client import SERVER
+
 import easygui
 from pythonping import ping
 from time import sleep
 
-def ping_server(SERVER=SERVER):
+def ping_server(SERVER):
 	pinging = ping(SERVER)
 	if pinging.success():
 		return True
@@ -11,10 +11,10 @@ def ping_server(SERVER=SERVER):
 		return False
 
 
-def check_status():
+def check_status(SERVER):
 	box_showed = False
 	while True:
-		status = ping_server()
+		status = ping_server(SERVER)
 		if status:
 			box_showed = False
 			pass

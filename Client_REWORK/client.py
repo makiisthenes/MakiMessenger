@@ -6,11 +6,11 @@ from connect import server_connect, get_private_ip, get_public_ip
 from tk_starter import tk_init, getwindow
 from ping import check_status
 from threading import Thread
-from config import PORT, HEADER_LENGTH, SERVER
+from config import PORT, HEADER_LENGTH
 
 if __name__ == '__main__':
     SERVER = "169.254.54.35"  # This is the Server IP, please change accordingly.
-    msg = "Please type your Servers IP, to use::"
+    msg = "Please type your Servers IP, to use:: "
     title = "Server IP Configure"
     SERVER = enterbox(msg, title)
     if len(SERVER) < 1:
@@ -19,10 +19,10 @@ if __name__ == '__main__':
     # Initation of Program
     root = tk_init()
     window_height, window_width = getwindow(root)
-    server_connect()
+    server_connect(SERVER)
 
     # Starting Ping
-    Thread(target=check_status, args=()).start()
+    Thread(target=check_status, args=(SERVER)).start()
 
 
     class MakiSession:

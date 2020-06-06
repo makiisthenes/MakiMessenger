@@ -1,8 +1,7 @@
 import socket, requests, json
 from config import PORT
-from client import SERVER
 
-def server_connect(SERVER=SERVER, PORT=PORT):
+def server_connect(SERVER, PORT=PORT):
 	ADDR = (SERVER, PORT)
 	client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	try:
