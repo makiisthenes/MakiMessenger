@@ -46,6 +46,7 @@ be set up and you can communicate with people on the same network. This will not
 <br>Im reviewing the module Cryptography to improve security of this app.
 <br><i>Network Security Features Include:</i>
 <ul>
+  <li>4 Layer Encryption </li> 
   <li>Passwords Stored in SHA-256 [DONE]</li>
   <li>Asymmetric Encryption [development]</li>
   <li>Email Validation [DONE]</li>
