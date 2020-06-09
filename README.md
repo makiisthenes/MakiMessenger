@@ -86,3 +86,14 @@ be set up and you can communicate with people on the same network. This will not
 <p align="center">
   <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/Resources/loading.png", width=400>
 </p>
+<hr>
+<br><strong>Security</strong>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/Pictures/maki_slide1.png", width=700>
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/Pictures/maki_slide2.png", width=700>
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/Pictures/maki_slide3.png", width=400>
+</p>
