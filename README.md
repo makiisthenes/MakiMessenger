@@ -48,6 +48,7 @@ be set up and you can communicate with people on the same network. This will not
 <ul>
   <li>4 Layer Encryption [development]</li> 
   <li>Use of DH Key Exchange [development]</li>
+  <li>8192-bit Private Keys [development]</li>
   <li>E2EE Encryption [development]</li>
   <li>Passwords Stored in SHA-256 [DONE]</li>
   <li>Asymmetric Encryption [development]</li>
@@ -71,7 +72,7 @@ be set up and you can communicate with people on the same network. This will not
 <br>--> https://docs.python.org/3/library/tkinter.html
 <br>--> https://hackernoon.com/10-common-security-gotchas-in-python-and-how-to-avoid-them-e19fbe265e03
 <br>--> https://effbot.org/tkinterbook/canvas.html
-
+<br>--> https://github.com/amiralis/pyDH/blob/master/pyDH/pyDH.py
 <hr>
 <br><strong>Rework Av1.0.0</strong>
 <p align="center">
