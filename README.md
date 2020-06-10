@@ -1,5 +1,6 @@
 <h1>MakiMessenger [REWORK]</h1><br>
 An messenger that allows users to communicate to each other in a local network setting.<br> [7,810 Files, 917 Folders] [180 MB]
+This is a proof of concept do rely on this as an secure option, because it is not.
 <hr>
 <span style='color:red'><strong>[There is currently limited functionality and works partially, this is currently in development during COVID19 and will be completed soon, thanks.]<br>
 [FIREWALL PROBLEMS][If you are getting a Timeout Error please disable firewall on PORT 5050 for python.exe/ maki_messenger.exe.]</span></strong>
