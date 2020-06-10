@@ -47,8 +47,8 @@ be set up and you can communicate with people on the same network. This will not
 <br><i>Network Security Features Include:</i>
 <ul>
   <li>4 Layer Encryption [development]</li> 
-  <li>Use of DH Key Exchange [development]</li>
-  <li>4096-bit Private Keys [development]</li>
+  <li>Use of DH Key Exchange [DONE]</li>
+  <li>4096-bit Private Keys [DONE]</li>
   <li>E2EE Encryption [development]</li>
   <li>Passwords Stored in SHA-256 [DONE]</li>
   <li>Asymmetric Encryption [development]</li>
