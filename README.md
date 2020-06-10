@@ -74,6 +74,8 @@ be set up and you can communicate with people on the same network. This will not
 <br>--> https://effbot.org/tkinterbook/canvas.html
 <br>--> https://github.com/amiralis/pyDH
 <br>--> https://nitratine.net/blog/post/encryption-and-decryption-in-python/
+<br>--> https://wiki.mozilla.org/Security/Server_Side_TLS
+<br>--> https://github.com/pyca/pyopenssl
 <hr>
 <br><strong>Rework Av1.0.0</strong>
 <p align="center">
