@@ -8,7 +8,7 @@ with open("im_a_noob_help_click_me.cmd", "w+") as noob:
     noob.write(f"pip install -r requirements.txt")
 subprocess.call("im_a_noob_help_click_me.cmd")
 with open("im_a_noob_help_click_me.cmd", "w+") as noob:
-    noob.write("python noob_script.py)
+    noob.write("python noob_script.py")
 print(path)
 with open("server_click_here.cmd", 'w+') as noob:
     noob.write(f"cd {server_path} \n")
