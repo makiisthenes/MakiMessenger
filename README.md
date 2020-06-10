@@ -72,7 +72,7 @@ be set up and you can communicate with people on the same network. This will not
 <br>--> https://docs.python.org/3/library/tkinter.html
 <br>--> https://hackernoon.com/10-common-security-gotchas-in-python-and-how-to-avoid-them-e19fbe265e03
 <br>--> https://effbot.org/tkinterbook/canvas.html
-<br>--> https://github.com/amiralis/pyDH/blob/master/pyDH/pyDH.py
+<br>--> https://github.com/amiralis/pyDH
 <hr>
 <br><strong>Rework Av1.0.0</strong>
 <p align="center">
