@@ -24,9 +24,9 @@ def generate_key_pair(KEY_PASSWORD='Gong4231'):
     print(pvem.decode("utf-8"))
     # encryption_algorithm = serialization.BestAvailableEncryption(password=KEY_PASSWORD.encode('utf-8'))
     # Obtaining Private Key
-    return (pem, pvem)
+    return pem, pvem
 
-generate_key_pair()
+
 
 
 

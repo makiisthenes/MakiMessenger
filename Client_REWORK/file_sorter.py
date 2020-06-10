@@ -30,3 +30,12 @@ def server_ip_writer(ip):
         # print("Server IP text file exists")
         with open(server_pickle_path, 'w+') as file:
             file.write(ip)
+
+
+def file_manager():
+    path = os.path.join(os.getcwd(), 'ProgramData')
+    if not os.path.exists(path):
+        os.makedirs(path)
+    chat_path = os.path.join(path, 'Chats')
+    if not os.path.exists(chat_path):
+        os.makedirs(chat_path)

@@ -4,6 +4,7 @@ import time
 import netifaces  # Cross Platform :)
 import platform
 from requests import get
+import pickle
 
 
 
@@ -74,10 +75,7 @@ def create_user_object():
     pub_ip = get('https://api.ipify.org').text
     print(f"Public IP: {pub_ip}")
     user_object = UserObject(timestamp, priv_ip, mac, hostname, system, release, version, pub_ip)
-    print("User Object has been created and can be pickled now")
-    return user_object
-
-
-
-
+    print("[PICKLED] Users data has been pickled and sent to Server.")
+    pickle_object = pickle.dumps(user_object)
+    return pickle_object
 
