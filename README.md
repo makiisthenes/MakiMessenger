@@ -76,6 +76,7 @@ be set up and you can communicate with people on the same network. This will not
 <br>--> https://nitratine.net/blog/post/encryption-and-decryption-in-python/
 <br>--> https://wiki.mozilla.org/Security/Server_Side_TLS
 <br>--> https://github.com/pyca/pyopenssl
+<br>--> https://www.websecurity.digicert.com/en/uk/security-topics/what-is-ssl-tls-https
 <hr>
 <br><strong>Rework Av1.0.0</strong>
 <p align="center">
