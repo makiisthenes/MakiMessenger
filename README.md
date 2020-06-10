@@ -48,7 +48,7 @@ be set up and you can communicate with people on the same network. This will not
 <ul>
   <li>4 Layer Encryption [development]</li> 
   <li>Use of DH Key Exchange [development]</li>
-  <li>E2EE Encryption </li>
+  <li>E2EE Encryption [development]</li>
   <li>Passwords Stored in SHA-256 [DONE]</li>
   <li>Asymmetric Encryption [development]</li>
   <li>Email Validation [DONE]</li>
