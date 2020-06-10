@@ -73,6 +73,7 @@ be set up and you can communicate with people on the same network. This will not
 <br>--> https://hackernoon.com/10-common-security-gotchas-in-python-and-how-to-avoid-them-e19fbe265e03
 <br>--> https://effbot.org/tkinterbook/canvas.html
 <br>--> https://github.com/amiralis/pyDH
+<br>--> https://nitratine.net/blog/post/encryption-and-decryption-in-python/
 <hr>
 <br><strong>Rework Av1.0.0</strong>
 <p align="center">
