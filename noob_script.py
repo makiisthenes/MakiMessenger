@@ -14,7 +14,3 @@ with open("server_click_here.cmd", 'w+') as noob:
 with open("client_click_here.cmd", 'w+') as noob:
     noob.write(f"cd {client_path} \n")
     noob.write(f"python client.py \n")
-
-subprocess.call('server_click_here.cmd')
-time.sleep(2)
-subprocess.call('client_click_here.cmd')
