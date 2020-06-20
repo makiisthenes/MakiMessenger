@@ -105,3 +105,7 @@ be set up and you can communicate with people on the same network. This will not
 </p>
 <hr>
 <br><strong>Android App [development]</strong>
+<!-- https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/AndroidApp/flow1.gif -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/AndroidApp/flow1.gif", width=700>
+</p>
