@@ -109,3 +109,4 @@ be set up and you can communicate with people on the same network. This will not
 <p align="center">
   <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/AndroidApp/flow1.gif", width=350>
 </p>
+TODO: Android App Development
