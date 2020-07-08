@@ -109,6 +109,21 @@ be set up and you can communicate with people on the same network. This will not
 <p align="center">
   <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/AndroidApp/flow1.gif", width=350>
 </p>
-TODO: Android App Development
-These are things required in order to complete the MakiMessenger App:
-[]
+TODO: Android App Development<br>
+These are things required in order to complete the MakiMessenger App:<br>
+Android App <br>
+<ul>
+  <li>Gallery Image Selection Properly Implemented with Firebase</li>
+  <li>Show Image with Cropped Circle Lining</li>
+  <li>Email and Password are Stored in Backend with MongoDB</li>
+  <li>Persistant Storage of Username and Password</li>
+  <li>WebSocket Properly Implemented</li>
+  <li>Making Sure Only 3 Email Resend Requests can be made in a 3min Period.</li>
+  <li>Making an local SQLite DB for Chats Saves.</li>
+  <li>External Saves for Photos and Videos</li>
+  <li>Saved Instances between Activities</li>
+  <li>Analytical Tools</li>
+  <li>Recycler View Implementation</li>
+  <li>Json Parser and Array Append</li>
+  <li>Activity Intent Parameters</li>
+</ul>
