@@ -110,3 +110,5 @@ be set up and you can communicate with people on the same network. This will not
   <img src="https://raw.githubusercontent.com/makiisthenes/MakiMessenger/master/AndroidApp/flow1.gif", width=350>
 </p>
 TODO: Android App Development
+These are things required in order to complete the MakiMessenger App:
+[]
