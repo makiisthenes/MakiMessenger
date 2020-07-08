@@ -126,4 +126,6 @@ Android App <br>
   <li>Recycler View Implementation</li>
   <li>Json Parser and Array Append</li>
   <li>Activity Intent Parameters</li>
+  <li>Signal Protocol for Messaging</li>
+  <li>Maybe Addition of OAuth2 for Google, Twitter</li>
 </ul>
