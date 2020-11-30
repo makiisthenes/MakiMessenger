@@ -15,7 +15,7 @@ ZODB==5.5.1
 zodbpickle==2.0.0
 zope.interface==5.1.0
 requests~=2.23.0
-cryptography~=2.9.2
+cryptography>=3.2
 PyAutoGUI~=0.9.50
 easygui~=0.98.1
 pythonping~=1.0.10
