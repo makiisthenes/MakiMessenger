@@ -1,4 +1,5 @@
 <h1>MakiMessenger [REWORK]</h1><br>
+This is bs and process of learning code, code is not structured planned and poorly written <br>
 An messenger that allows users to communicate to each other in a local network setting.<br> [7,810 Files, 917 Folders] [180 MB]<br>
 This is a proof of concept don't rely on this as an secure option, because it is not.
 <hr>
