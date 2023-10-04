@@ -19,3 +19,4 @@ cryptography>=3.2
 PyAutoGUI~=0.9.50
 easygui~=0.98.1
 pythonping~=1.0.10
+urllib3>=1.26.17 # not directly required, pinned by Snyk to avoid a vulnerability
