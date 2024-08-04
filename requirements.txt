@@ -15,7 +15,9 @@ ZODB==5.5.1
 zodbpickle==2.0.0
 zope.interface==5.1.0
 requests~=2.23.0
-cryptography>=3.2
+cryptography>=42.0.8
 PyAutoGUI~=0.9.50
 easygui~=0.98.1
 pythonping~=1.0.10
+certifi>=2024.7.4 # not directly required, pinned by Snyk to avoid a vulnerability
+django>=3.2.25 # not directly required, pinned by Snyk to avoid a vulnerability
