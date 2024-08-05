@@ -3,11 +3,11 @@ BTrees==4.7.2
 cffi==1.14.0
 image==1.5.28
 persistent==4.6.4
-Pillow==7.1.1
+Pillow==10.3.0
 pycparser==2.20
 pytz==2019.3
 six==1.14.0
-sqlparse==0.3.1
+sqlparse==0.5.0
 transaction==3.0.0
 zc.lockfile==2.0
 ZConfig==3.5.0
